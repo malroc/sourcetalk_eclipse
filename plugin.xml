@@ -5,23 +5,23 @@
    <extension
          point="org.eclipse.ui.actionSets">
       <actionSet
-            label="Sample Action Set"
+            label="Plugins"
             visible="true"
             id="SourceTalk_plugin.actionSet">
          <menu
-               label="Sample &amp;Menu"
-               id="sampleMenu">
+               label="Edit"
+               id="edit">
             <separator
-                  name="sampleGroup">
+                  name="plugins">
             </separator>
          </menu>
          <action
-               label="&amp;Sample Action"
-               icon="icons/sample.gif"
+               label="Send to SourceTalk.net"
+               icon="icons/ST.png"
                class="sourcetalk_plugin.actions.SampleAction"
-               tooltip="Hello, Eclipse world"
-               menubarPath="sampleMenu/sampleGroup"
-               toolbarPath="sampleGroup"
+               tooltip="Send to SourceTalk.net"
+               menubarPath="edit/plugins"
+               toolbarPath="Plugins"
                id="sourcetalk_plugin.actions.SampleAction">
          </action>
       </actionSet>

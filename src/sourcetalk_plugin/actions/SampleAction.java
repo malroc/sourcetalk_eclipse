@@ -73,7 +73,7 @@ public class SampleAction implements IWorkbenchWindowActionDelegate {
             
         }
         try {       
-            String open_url = sendPost("http://sourcetalk.net/conferences",urlParameters);
+            String open_url = sendPost("http://app.sourcetalk.net/conferences",urlParameters);
             
             open_url += "/" + getRow();
             Desktop.getDesktop().browse(new URL(open_url).toURI());
@@ -176,13 +176,9 @@ public class SampleAction implements IWorkbenchWindowActionDelegate {
     	        .getAdapter(AbstractTextEditor.class);
     	String content = null;
     	if (part != null) {
-
-    	    IDocument document = part.getDocumentProvider().getDocument(
+    		IDocument document = part.getDocumentProvider().getDocument(
     	            part.getEditorInput());
-
     	    content = document.get();
-
-    	    //do something with the text
     	}
         return content;
     }

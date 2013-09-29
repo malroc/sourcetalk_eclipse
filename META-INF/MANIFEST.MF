@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: SourceTalk_plugin
-Bundle-SymbolicName: SourceTalk_plugin; singleton:=true
+Bundle-Name: org.sourcetalk_plugin.eclipse
+Bundle-SymbolicName: org.sourcetalk_plugin.eclipse;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: sourcetalk_plugin.Activator
 Require-Bundle: org.eclipse.ui,
