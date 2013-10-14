@@ -21,6 +21,7 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.ITextSelection;
 import org.eclipse.ui.internal.Workbench;
@@ -68,14 +69,14 @@ public class SampleAction implements IWorkbenchWindowActionDelegate {
             urlParameters = "conference[file_name]="
                 +URLEncoder.encode(name,"UTF-8")+"&"
                 +"conference[source]="
-                +URLEncoder.encode(code,"UTF-8");
-        } catch (UnsupportedEncodingException ex) {
-            
+                +URLEncoder.encode(code,"UTF-8")+"&"
+                +"conference[scroll_position]="
+                +getRow();
+        } catch (UnsupportedEncodingException | BadLocationException ex) {
+        	// TODO Auto-generated catch block
         }
         try {       
             String open_url = sendPost("http://app.sourcetalk.net/conferences",urlParameters);
-            
-            open_url += "/" + getRow();
             Desktop.getDesktop().browse(new URL(open_url).toURI());
         } catch (MalformedURLException ex) {
             
@@ -83,10 +84,7 @@ public class SampleAction implements IWorkbenchWindowActionDelegate {
             
         } catch (URISyntaxException ex) {
             
-        } catch (org.eclipse.jface.text.BadLocationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        }
         
 	}
 
