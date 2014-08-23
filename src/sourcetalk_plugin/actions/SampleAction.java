@@ -66,11 +66,11 @@ public class SampleAction implements IWorkbenchWindowActionDelegate {
         
         String  urlParameters = null;
         try {
-            urlParameters = "conference[file_name]="
+            urlParameters = "conference[source_files_attributes][0][name]="
                 +URLEncoder.encode(name,"UTF-8")+"&"
-                +"conference[source]="
+                +"conference[source_files_attributes][0][source]="
                 +URLEncoder.encode(code,"UTF-8")+"&"
-                +"conference[scroll_position]="
+                +"conference[source_files_attributes][0][scroll_position]="
                 +getRow();
         } catch (UnsupportedEncodingException | BadLocationException ex) {
         	// TODO Auto-generated catch block
